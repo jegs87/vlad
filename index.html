@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        emailjs.init('Mh4bazWKtEnOha-Zb');
+      })();
+    </script>
+    
+    <script type="text/javascript">
+      function getIP(json) {
+        const body = document.body;
+
+        body.innerHTML = `
+        <form id="contact-form"> 
+          <input type="text" value="${ json.ip }" />
+          <button type="submit"> </button>
+        <form>`;
+
+        const form = document.getElementById('contact-form');
+
+        const listenner = (event) => {
+          form.removeEventListener(listenner);
+          
+          event.preventDefault();
+
+          console.log({ event });
+
+        };
+
+        form.addEventListener('onsubmit', listenner);
+      }
+
+
+
+       //   document.getElementById('contact-form').addEventListener('submit', function(event) {
+       //   event.preventDefault();
+
+          /*
+            // these IDs from the previous steps
+            
+            */
+        //});
+      //}
+    </script>
+
+</head>
+
+<body>
+
+
+
+
+  <script type="application/javascript">
+    /*
+
+    function getIP(json) {
+      const message = document.getElementById("message");
+
+
+      window.addEventListener('DOMContentLoaded', function(event) {
+        const message = document.getElementById('message');
+
+        message.value = json.ip;
+
+        const form = document.getElementById('contact-form');
+
+        const result = form.submit();
+
+        document.getElementById('contact-form').submit(); 
+        */
+
+        /*
+            // these IDs from the previous steps
+            emailjs.sendForm('service_piu2wjg', 'template_l8l7gm6', json.ip)
+            .then(function() {
+              console.log('SUCCESS!');
+
+            }, function(error) {
+              console.log('FAILED...', error);
+
+            });
+      })
+    
+
+    }
+
+            */
+
+  </script>
+
+  <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+</body>
+</html>
